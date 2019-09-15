@@ -5,13 +5,18 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="style.css">
   <title>saveCow</title>
 </head>
 
 <body>
-  <!-- <a href='https://pngtree.com/so/cow clipart'>cow clipart png from pngtree.com</a> -->
-  <canvas id="saveCow" height="750px" width="1400px"></canvas>
-  <script src="farm.js"></script>
+  <div id="startGame" class="startGame">
+    <div style="text-align:center; margin: 50px 0px;">
+      <button id="start-game-button" class="btn btn_style">START GAME</button>
+    </div>
+  </div>
+  <canvas id="saveCow" class="canvas" height="750px" width="1400px"></canvas>
+  <script src="board.js"></script>
   <script src="et.js"></script>
   <script src="obstacles.js"></script>
   <script src="cow.js"></script>

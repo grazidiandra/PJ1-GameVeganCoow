@@ -3,8 +3,8 @@ class Obstacles {
     this.ctx = ctx;
     this.x = 1500;
     this.y = y;
-    this.width = 90;
-    this.height = 60;
+    this.width = 60;
+    this.height = 30;
     this.img = new Image();
   }
 
@@ -15,9 +15,9 @@ class Obstacles {
     // this.ctx.fillRect(this.x, this.y, this.width, this.width);
   }
 
-  hitBox() {
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
-  }
+  // hitBox() {
+  //   this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+  // }
 
   move() {
     this.x -= 2;

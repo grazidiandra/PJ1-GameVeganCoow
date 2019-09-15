@@ -1,15 +1,26 @@
 const canvas = document.getElementById('saveCow');
+const startGame = document.getElementById('startGame');
 const ctx = canvas.getContext('2d');
-
-const et = new Et(ctx);
 let frame = 0;
 const myCows = [];
 const myObstacles = [];
 let gameOver = false;
-et.draw();
+
+const et = new Et(ctx);
+const board = new Board(ctx);
+
+document.getElementById('start-game-button').onclick = function() {
+  canvas.style.display = 'initial';
+  startGame.style.display = 'none';
+  render();
+};
 
 document.onkeydown = function(e) {
   et.move(e.keyCode);
+};
+
+document.onkeyup = function(e) {
+  et.speedY = 0;
 };
 
 const createCow = () => {
@@ -34,7 +45,7 @@ const moveCows = () => {
 };
 
 const creatObstacles = () => {
-  if (frame % 100 === 0) {
+  if (frame % 120 === 0) {
     const randomY = Math.floor(Math.random() * (550 - 10) + 10);
     myObstacles.push(new Obstacles(ctx, randomY));
   }
@@ -47,7 +58,6 @@ const moveObstacles = () => {
     }
     obs.move();
     obs.draw();
-    obs.hitBox();
   });
 };
 
@@ -55,9 +65,11 @@ const render = () => {
   if (gameOver) {
     cancelAnimationFrame(render);
   } else {
-    et.update();
+    board.update();
+    board.draw();
+    board.move();
+    et.newPos();
     et.draw();
-    et.hitBox();
     createCow();
     moveCows();
     creatObstacles();
@@ -66,5 +78,3 @@ const render = () => {
     frame += 1;
   }
 };
-
-render();

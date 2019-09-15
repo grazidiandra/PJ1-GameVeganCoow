@@ -3,41 +3,40 @@
 class Et {
   constructor(ctx) {
     this.ctx = ctx;
-    this.x = 70;
+    this.x = 80;
     this.y = 10;
-    this.height = 100;
-    this.width = 120;
+    this.height = 120;
+    this.width = 190;
     this.img = new Image();
+    this.speedY = 0;
   }
 
   draw() {
     this.img.src = './images/spaceship2.png';
     this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    // this.ctx.fillStyle = 'blue';
-    // this.ctx.fillRect(this.x, this.y, this.height, this.width);
   }
 
-  hitBox() {
-    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
+  newPos() {
+    this.y += this.speedY;
   }
 
   move(e) {
     switch (e) {
       case 38:
-        this.y -= 15;
+        this.speedY -= 2;
         break;
       case 40:
-        this.y += 15;
+        this.speedY += 2;
         break;
     }
   }
 
-  update() {
-    this.ctx.clearRect(0, 0, 1400, 750);
-  }
-
   abduct(cow) {
-    if (cow.x <= this.x + 80 && cow.x >= this.x && cow.y <= this.y + 250) {
+    if (
+      cow.x <= this.x + this.width / 3 &&
+      cow.x >= this.x &&
+      cow.y <= this.y + 200
+    ) {
       cow.direction = true;
     }
   }
