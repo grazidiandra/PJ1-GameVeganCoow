@@ -47,6 +47,7 @@ const moveObstacles = () => {
     }
     obs.move();
     obs.draw();
+    obs.hitBox();
   });
 };
 
@@ -56,6 +57,7 @@ const render = () => {
   } else {
     et.update();
     et.draw();
+    et.hitBox();
     createCow();
     moveCows();
     creatObstacles();

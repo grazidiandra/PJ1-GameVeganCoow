@@ -3,13 +3,20 @@ class Obstacles {
     this.ctx = ctx;
     this.x = 1500;
     this.y = y;
-    this.height = 30;
-    this.width = 30;
+    this.width = 90;
+    this.height = 60;
+    this.img = new Image();
   }
 
   draw() {
-    this.ctx.fillStyle = 'red';
-    this.ctx.fillRect(this.x, this.y, this.height, this.width);
+    this.img.src = './images/drone.png';
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    // this.ctx.fillStyle = 'red';
+    // this.ctx.fillRect(this.x, this.y, this.width, this.width);
+  }
+
+  hitBox() {
+    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
   }
 
   move() {

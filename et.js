@@ -3,15 +3,22 @@
 class Et {
   constructor(ctx) {
     this.ctx = ctx;
-    this.x = 150;
+    this.x = 70;
     this.y = 10;
-    this.height = 150;
-    this.width = 150;
+    this.height = 100;
+    this.width = 120;
+    this.img = new Image();
   }
 
   draw() {
-    this.ctx.fillStyle = 'blue';
-    this.ctx.fillRect(this.x, this.y, this.height, this.width);
+    this.img.src = './images/spaceship2.png';
+    this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
+    // this.ctx.fillStyle = 'blue';
+    // this.ctx.fillRect(this.x, this.y, this.height, this.width);
+  }
+
+  hitBox() {
+    this.ctx.strokeRect(this.x, this.y, this.width, this.height);
   }
 
   move(e) {
@@ -30,7 +37,7 @@ class Et {
   }
 
   abduct(cow) {
-    if (cow.x <= this.x + 50 && cow.x >= this.x && cow.y <= this.y + 350) {
+    if (cow.x <= this.x + 80 && cow.x >= this.x && cow.y <= this.y + 250) {
       cow.direction = true;
     }
   }
