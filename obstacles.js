@@ -11,13 +11,7 @@ class Obstacles {
   draw() {
     this.img.src = './images/drone.png';
     this.ctx.drawImage(this.img, this.x, this.y, this.width, this.height);
-    // this.ctx.fillStyle = 'red';
-    // this.ctx.fillRect(this.x, this.y, this.width, this.width);
   }
-
-  // hitBox() {
-  //   this.ctx.strokeRect(this.x, this.y, this.width, this.height);
-  // }
 
   move() {
     this.x -= 2;

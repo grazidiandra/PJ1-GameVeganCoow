@@ -68,6 +68,7 @@ const render = () => {
     board.update();
     board.draw();
     board.move();
+    et.drawLight();
     et.newPos();
     et.draw();
     createCow();

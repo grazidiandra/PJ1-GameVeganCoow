@@ -20,6 +20,31 @@ class Et {
     this.y += this.speedY;
   }
 
+  drawLight() {
+    if (this.y >= 420) {
+      this.ctx.fillStyle = 'white';
+      this.ctx.globalAlpha = 0.4;
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.x + 70, this.y + 90);
+      this.ctx.lineTo(this.x + 120, this.y + 90);
+      this.ctx.lineTo(this.x + 200, this.y + 300);
+      this.ctx.lineTo(this.x - 20, this.y + 300);
+      this.ctx.lineTo(this.x + 70, this.y + 90);
+      this.ctx.fill();
+      this.ctx.closePath();
+      this.ctx.globalAlpha = 0.6;
+      this.ctx.beginPath();
+      this.ctx.moveTo(this.x + 80, this.y + 90);
+      this.ctx.lineTo(this.x + 110, this.y + 90);
+      this.ctx.lineTo(this.x + 190, this.y + 300);
+      this.ctx.lineTo(this.x - 10, this.y + 300);
+      this.ctx.lineTo(this.x + 80, this.y + 90);
+      this.ctx.fill();
+      this.ctx.closePath();
+      this.ctx.globalAlpha = 1.0;
+    }
+  }
+
   move(e) {
     switch (e) {
       case 38:
@@ -32,11 +57,7 @@ class Et {
   }
 
   abduct(cow) {
-    if (
-      cow.x <= this.x + this.width / 3 &&
-      cow.x >= this.x &&
-      cow.y <= this.y + 200
-    ) {
+    if (cow.x <= this.x + 70 && cow.x >= this.x && cow.y <= this.y + 300) {
       cow.direction = true;
     }
   }
