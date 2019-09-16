@@ -9,6 +9,7 @@ let gameOver = false;
 const et = new Et(ctx);
 const board = new Board(ctx);
 
+//start game
 document.getElementById('start-game-button').onclick = function() {
   canvas.style.display = 'initial';
   startGame.style.display = 'none';
@@ -29,16 +30,17 @@ const createCow = () => {
   }
 };
 
-const clear = (cow, idx) => {
-  if (cow.height <= 0 && cow.width <= 0) {
+const addPoint = (cow, idx) => {
+  if (cow.height <= 0 || cow.width <= 0) {
     myCows.splice(idx, 1);
+    board.points += 1;
   }
 };
 
 const moveCows = () => {
   myCows.forEach((cow, idx) => {
     et.abduct(cow);
-    clear(cow, idx);
+    addPoint(cow, idx);
     cow.move();
     cow.draw();
   });
@@ -53,7 +55,7 @@ const creatObstacles = () => {
 
 const moveObstacles = () => {
   myObstacles.forEach(obs => {
-    if (et.crashWith(obs)) {
+    if (et.crashVertical(obs) || et.crashHorizontal(obs)) {
       gameOver = true;
     }
     obs.move();
@@ -67,6 +69,7 @@ const render = () => {
   } else {
     board.update();
     board.draw();
+    board.drawPoints();
     board.move();
     et.drawLight();
     et.newPos();

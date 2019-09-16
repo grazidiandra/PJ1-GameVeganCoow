@@ -4,7 +4,7 @@ class Et {
   constructor(ctx) {
     this.ctx = ctx;
     this.x = 80;
-    this.y = 10;
+    this.y = 100;
     this.height = 120;
     this.width = 190;
     this.img = new Image();
@@ -21,7 +21,7 @@ class Et {
   }
 
   drawLight() {
-    if (this.y >= 420) {
+    if (this.y >= 400) {
       this.ctx.fillStyle = 'white';
       this.ctx.globalAlpha = 0.4;
       this.ctx.beginPath();
@@ -48,16 +48,16 @@ class Et {
   move(e) {
     switch (e) {
       case 38:
-        this.speedY -= 2;
+        this.speedY -= 3;
         break;
       case 40:
-        this.speedY += 2;
+        this.speedY += 3;
         break;
     }
   }
 
   abduct(cow) {
-    if (cow.x <= this.x + 70 && cow.x >= this.x && cow.y <= this.y + 300) {
+    if (cow.x <= this.x + 70 && cow.x >= this.x && cow.y <= this.y + 250) {
       cow.direction = true;
     }
   }
@@ -78,10 +78,19 @@ class Et {
     return this.y + this.height;
   }
 
-  crashWith(obstacle) {
+  crashVertical(obstacle) {
     return !(
       this.bottom() < obstacle.top() ||
       this.top() > obstacle.bottom() ||
+      this.right() - 70 < obstacle.left() ||
+      this.left() + 70 > obstacle.right()
+    );
+  }
+
+  crashHorizontal(obstacle) {
+    return !(
+      this.bottom() - 30 < obstacle.top() ||
+      this.top() + 60 > obstacle.bottom() ||
       this.right() < obstacle.left() ||
       this.left() > obstacle.right()
     );

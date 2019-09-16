@@ -4,14 +4,25 @@ class Board {
     this.img = new Image();
     this.x = 0;
     this.y = 0;
-    this.speed = -1;
+    this.speed = -2;
     this.width = 1400;
     this.height = 750;
+    this.points = 0;
   }
 
   move() {
     this.x += this.speed;
     this.x %= this.width;
+  }
+
+  points() {
+    return this.points;
+  }
+
+  drawPoints() {
+    this.ctx.font = '20px Verdana';
+    this.ctx.fillStyle = 'white';
+    this.ctx.fillText('SCORE: ' + this.points, 100, 50);
   }
 
   draw() {

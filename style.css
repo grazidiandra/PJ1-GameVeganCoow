@@ -1,17 +1,20 @@
 @import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
 
+
 .canvas {
   display: none;
+  border: 2px solid black;
 }
 
 .startGame {
-  height: 100vh;
+  height: 750px;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./images/background.png);
   background-repeat: no-repeat;
   background-size: 150%;
+  border: 2px solid black;
 }
 
 .btn {
@@ -40,4 +43,14 @@
 
 .btn_style:hover {
   box-shadow: 0 0 10px 0 #F24949 inset, 0 0 10px 4px #F24949;
+}
+
+.board-start {
+  height: 400px;
+  width: 700px;
+  background: rgba(240, 125, 125, 0.8);
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  border-radius: 0.8em;
 }
