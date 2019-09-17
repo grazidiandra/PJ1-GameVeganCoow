@@ -1,0 +1,157 @@
+{
+    "extension": "linecount",
+    "version": "0.1.7",
+    "workspace": "/Users/guilhermedavi/Documents/Grazi/Week3-PROJ1",
+    "linecount": [
+        {
+            "version": "0.1.7",
+            "counttime": "2019-09-17 11:22:39",
+            "filesum": 21,
+            "codesum": 342,
+            "commentsum": 6,
+            "blanksum": 48,
+            "filelist": [
+                {
+                    "blank": 5,
+                    "code": 48,
+                    "comment": 0,
+                    "filename": "board.js"
+                },
+                {
+                    "blank": 3,
+                    "code": 26,
+                    "comment": 3,
+                    "filename": "cow.js"
+                },
+                {
+                    "blank": 11,
+                    "code": 91,
+                    "comment": 2,
+                    "filename": "et.js"
+                },
+                {
+                    "filename": "images/background.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/cow1.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/cow1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/cow2.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/drone.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/gameover.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/ligth.jpeg",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/sopaeshipStart.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/spaceship-1.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/spaceship.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/spaceship2.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/spaceshipstart.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/ufo.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "filename": "images/world.png",
+                    "isbinaryfile": true,
+                    "blank": 0,
+                    "code": 0,
+                    "comment": 0
+                },
+                {
+                    "blank": 3,
+                    "code": 25,
+                    "comment": 0,
+                    "filename": "index.html"
+                },
+                {
+                    "blank": 10,
+                    "code": 74,
+                    "comment": 1,
+                    "filename": "index.js"
+                },
+                {
+                    "blank": 6,
+                    "code": 29,
+                    "comment": 0,
+                    "filename": "obstacles.js"
+                },
+                {
+                    "blank": 10,
+                    "code": 49,
+                    "comment": 0,
+                    "filename": "style.css"
+                }
+            ]
+        }
+    ]
+}

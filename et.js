@@ -9,6 +9,7 @@ class Et {
     this.width = 190;
     this.img = new Image();
     this.speedY = 0;
+    this.img2 = new Image();
   }
 
   draw() {
@@ -17,7 +18,13 @@ class Et {
   }
 
   newPos() {
-    this.y += this.speedY;
+    if (this.y >= 0 && this.y <= 450) {
+      this.y += this.speedY;
+    } else if (this.y < 0) {
+      this.y += 1;
+    } else if (this.y > 450) {
+      this.y -= 1;
+    }
   }
 
   drawLight() {
@@ -82,17 +89,22 @@ class Et {
     return !(
       this.bottom() < obstacle.top() ||
       this.top() > obstacle.bottom() ||
-      this.right() - 70 < obstacle.left() ||
+      this.right() - 90 < obstacle.left() ||
       this.left() + 70 > obstacle.right()
     );
   }
 
   crashHorizontal(obstacle) {
     return !(
-      this.bottom() - 30 < obstacle.top() ||
+      this.bottom() - 60 < obstacle.top() ||
       this.top() + 60 > obstacle.bottom() ||
       this.right() < obstacle.left() ||
       this.left() > obstacle.right()
     );
+  }
+
+  pow() {
+    this.img2.src = './images/pow.png';
+    this.img2.onload = () => this.ctx.drawImage(this.img2, 60, 300, 50, 80);
   }
 }

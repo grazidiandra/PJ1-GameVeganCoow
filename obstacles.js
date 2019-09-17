@@ -3,8 +3,8 @@ class Obstacles {
     this.ctx = ctx;
     this.x = 1500;
     this.y = y;
-    this.width = 60;
-    this.height = 30;
+    this.width = 70;
+    this.height = 40;
     this.img = new Image();
   }
 
@@ -18,7 +18,7 @@ class Obstacles {
   }
 
   left() {
-    return this.x;
+    return this.x + 10;
   }
 
   right() {

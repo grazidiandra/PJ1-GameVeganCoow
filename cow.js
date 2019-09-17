@@ -26,3 +26,7 @@ class Cow {
     }
   }
 }
+
+// var a = new Audio()
+// a.src()
+// a.play()

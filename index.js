@@ -8,8 +8,10 @@ let gameOver = false;
 
 const et = new Et(ctx);
 const board = new Board(ctx);
+const audio = new Audio();
+audio.src = './images/abuduct.mp3';
+audio.volume = 0.1;
 
-//start game
 document.getElementById('start-game-button').onclick = function() {
   canvas.style.display = 'initial';
   startGame.style.display = 'none';
@@ -34,6 +36,7 @@ const addPoint = (cow, idx) => {
   if (cow.height <= 0 || cow.width <= 0) {
     myCows.splice(idx, 1);
     board.points += 1;
+    audio.play();
   }
 };
 
@@ -56,6 +59,7 @@ const creatObstacles = () => {
 const moveObstacles = () => {
   myObstacles.forEach(obs => {
     if (et.crashVertical(obs) || et.crashHorizontal(obs)) {
+      et.pow();
       gameOver = true;
     }
     obs.move();
@@ -65,6 +69,7 @@ const moveObstacles = () => {
 
 const render = () => {
   if (gameOver) {
+    board.gameover();
     cancelAnimationFrame(render);
   } else {
     board.update();

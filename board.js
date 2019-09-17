@@ -2,10 +2,11 @@ class Board {
   constructor(ctx) {
     this.ctx = ctx;
     this.img = new Image();
+    this.img2 = new Image();
     this.x = 0;
     this.y = 0;
     this.speed = -2;
-    this.width = 1400;
+    this.width = 1430;
     this.height = 750;
     this.points = 0;
   }
@@ -22,7 +23,7 @@ class Board {
   drawPoints() {
     this.ctx.font = '20px Verdana';
     this.ctx.fillStyle = 'white';
-    this.ctx.fillText('SCORE: ' + this.points, 100, 50);
+    this.ctx.fillText('VEGAN POINTS: ' + this.points, 50, 50);
   }
 
   draw() {
@@ -45,6 +46,11 @@ class Board {
         this.height
       );
     }
+  }
+
+  gameover() {
+    this.img2.src = './images/gameover.png';
+    this.img2.onload = () => this.ctx.drawImage(this.img2, 460, 300, 500, 80);
   }
 
   update() {
