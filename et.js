@@ -96,7 +96,7 @@ class Et {
 
   crashHorizontal(obstacle) {
     return !(
-      this.bottom() - 60 < obstacle.top() ||
+      this.bottom() - 80 < obstacle.top() ||
       this.top() + 60 > obstacle.bottom() ||
       this.right() < obstacle.left() ||
       this.left() > obstacle.right()
@@ -104,7 +104,7 @@ class Et {
   }
 
   pow() {
-    this.img2.src = './images/pow.png';
-    this.img2.onload = () => this.ctx.drawImage(this.img2, 60, 300, 50, 80);
+    this.img2.src = './images/gameover.png';
+    this.img2.onload = () => this.ctx.drawImage(this.img2, 460, 300, 500, 80);
   }
 }

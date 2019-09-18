@@ -6,20 +6,24 @@
   padding: 0;
 }
 
+body {
+  background-color: rgb(176, 236, 106);
+
+}
+
 .canvas {
   display: none;
-  border: 2px solid white;
 }
 
 .startGame {
-  height: 750px;
+  height: 99vh;
   display: flex;
   justify-content: center;
   align-items: center;
   background-image: url(./images/background.png);
   background-repeat: no-repeat;
   background-size: 150%;
-  border: 2px solid white;
+
 }
 
 
@@ -48,12 +52,12 @@
   font-family: 'kurbanistika';
   font-size: 120px;
   color: white;
-  margin-bottom: 50px;
+  margin-bottom: 30px;
 }
 
 .info {
   font-family: 'Cute Font', cursive;
   font-size: 30px;
   color: white;
-  margin-bottom: 30px;
+  margin-bottom: 80px;
 }

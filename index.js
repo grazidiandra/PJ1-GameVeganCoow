@@ -8,9 +8,14 @@ let gameOver = false;
 
 const et = new Et(ctx);
 const board = new Board(ctx);
+//AUDIO ABDUCT
 const audio = new Audio();
-audio.src = './images/abuduct.mp3';
-audio.volume = 0.1;
+audio.src = './images/SOMabduct.mp3';
+audio.volume = 0.2;
+//AUDIO GAME
+const audio2 = new Audio();
+audio2.src = './images/somfundo.mp3';
+audio2.volume = 0.1;
 
 document.getElementById('start-game-button').onclick = function() {
   canvas.style.display = 'initial';
@@ -50,7 +55,7 @@ const moveCows = () => {
 };
 
 const creatObstacles = () => {
-  if (frame % 120 === 0) {
+  if (frame % 100 === 0) {
     const randomY = Math.floor(Math.random() * (550 - 10) + 10);
     myObstacles.push(new Obstacles(ctx, randomY));
   }
@@ -71,7 +76,12 @@ const render = () => {
   if (gameOver) {
     board.gameover();
     cancelAnimationFrame(render);
+    audio2.pause();
+    setInterval(() => {
+      window.location.reload();
+    }, 1500);
   } else {
+    audio2.play();
     board.update();
     board.draw();
     board.drawPoints();
