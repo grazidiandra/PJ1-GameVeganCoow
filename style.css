@@ -49,7 +49,7 @@ body {
 
 @font-face {
   font-family: 'kurbanistika';
-  src: url('kurbanistika.ttf') format('truetype');
+  src: url(./images/kurbanistika.ttf) format('truetype');
 }
 
 .title {
