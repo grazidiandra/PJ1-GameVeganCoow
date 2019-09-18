@@ -18,7 +18,7 @@ class Obstacles {
   }
 
   left() {
-    return this.x + 10;
+    return this.x + 15;
   }
 
   right() {

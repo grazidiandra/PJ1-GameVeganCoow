@@ -15,7 +15,11 @@ audio.volume = 0.2;
 //AUDIO GAME
 const audio2 = new Audio();
 audio2.src = './images/somfundo.mp3';
-audio2.volume = 0.1;
+audio2.volume = 0.3;
+//AUDIO GAME OVER
+const audio3 = new Audio();
+audio3.src = './images/gameoversound2.mp3';
+audio3.volume = 0.1;
 
 document.getElementById('start-game-button').onclick = function() {
   canvas.style.display = 'initial';
@@ -32,7 +36,7 @@ document.onkeyup = function(e) {
 };
 
 const createCow = () => {
-  if (frame % 300 === 0) {
+  if (frame % 250 === 0) {
     myCows.push(new Cow(ctx));
   }
 };
@@ -56,7 +60,7 @@ const moveCows = () => {
 
 const creatObstacles = () => {
   if (frame % 100 === 0) {
-    const randomY = Math.floor(Math.random() * (550 - 10) + 10);
+    const randomY = Math.floor(Math.random() * (550 - 20) + 20);
     myObstacles.push(new Obstacles(ctx, randomY));
   }
 };
@@ -64,7 +68,6 @@ const creatObstacles = () => {
 const moveObstacles = () => {
   myObstacles.forEach(obs => {
     if (et.crashVertical(obs) || et.crashHorizontal(obs)) {
-      et.pow();
       gameOver = true;
     }
     obs.move();
@@ -77,6 +80,7 @@ const render = () => {
     board.gameover();
     cancelAnimationFrame(render);
     audio2.pause();
+    audio3.play();
     setInterval(() => {
       window.location.reload();
     }, 1500);

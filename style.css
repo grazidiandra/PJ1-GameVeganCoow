@@ -47,9 +47,13 @@ body {
   box-shadow: 0 0 10px 0 #F24949 inset, 0 0 10px 4px #F24949;
 }
 
+@font-face {
+  font-family: 'kurbanistika';
+  src: url('kurbanistika.ttf') format('truetype');
+}
 
 .title {
-  font-family: 'kurbanistika';
+  font-family: 'kurbanistika', Verdana, Geneva, Tahoma, sans-serif;
   font-size: 120px;
   color: white;
   margin-bottom: 30px;
