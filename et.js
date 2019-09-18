@@ -74,7 +74,7 @@ class Et {
   }
 
   right() {
-    return this.x + this.width;
+    return this.x + this.width - 10;
   }
 
   top() {
@@ -89,16 +89,16 @@ class Et {
     return !(
       this.bottom() < obstacle.top() ||
       this.top() > obstacle.bottom() ||
-      this.right() - 90 < obstacle.left() ||
+      this.right() - 70 < obstacle.left() ||
       this.left() + 70 > obstacle.right()
     );
   }
 
   crashHorizontal(obstacle) {
     return !(
-      this.bottom() - 30 < obstacle.top() ||
+      this.bottom() - 40 < obstacle.top() ||
       this.top() + 60 > obstacle.bottom() ||
-      this.right() < obstacle.left() ||
+      this.right() - 5 < obstacle.left() ||
       this.left() > obstacle.right()
     );
   }

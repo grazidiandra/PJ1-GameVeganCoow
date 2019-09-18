@@ -14,7 +14,7 @@ class Obstacles {
   }
 
   move() {
-    this.x -= 5;
+    this.x -= 7;
   }
 
   left() {
@@ -30,6 +30,6 @@ class Obstacles {
   }
 
   bottom() {
-    return this.y + this.height;
+    return this.y + this.height - 5;
   }
 }

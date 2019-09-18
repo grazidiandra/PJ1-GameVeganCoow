@@ -4,6 +4,7 @@ const ctx = canvas.getContext('2d');
 let frame = 0;
 const myCows = [];
 const myObstacles = [];
+const myAirplan = [];
 let gameOver = false;
 
 const et = new Et(ctx);
@@ -18,8 +19,8 @@ audio2.src = './images/somfundo.mp3';
 audio2.volume = 0.3;
 //AUDIO GAME OVER
 const audio3 = new Audio();
-audio3.src = './images/gameoversound2.mp3';
-audio3.volume = 0.1;
+audio3.src = './images/gameoversound.mp3';
+audio3.volume = 0.4;
 
 document.getElementById('start-game-button').onclick = function() {
   canvas.style.display = 'initial';
@@ -58,8 +59,25 @@ const moveCows = () => {
   });
 };
 
+const creatObstaclesAirplan = () => {
+  if (frame % 700 === 0 && frame !== 0) {
+    const randomY = Math.floor(Math.random() * (300 - 50) + 50);
+    myAirplan.push(new Airplan(ctx, randomY));
+  }
+};
+
+const moveObstaclesAirplan = () => {
+  myAirplan.forEach(air => {
+    if (et.crashVertical(air) || et.crashHorizontal(air)) {
+      gameOver = true;
+    }
+    air.move();
+    air.draw();
+  });
+};
+
 const creatObstacles = () => {
-  if (frame % 100 === 0) {
+  if (frame % 90 === 0) {
     const randomY = Math.floor(Math.random() * (550 - 20) + 20);
     myObstacles.push(new Obstacles(ctx, randomY));
   }
@@ -97,6 +115,8 @@ const render = () => {
     moveCows();
     creatObstacles();
     moveObstacles();
+    creatObstaclesAirplan();
+    moveObstaclesAirplan();
     requestAnimationFrame(render);
     frame += 1;
   }
