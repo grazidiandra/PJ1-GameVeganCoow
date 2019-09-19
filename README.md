@@ -39,7 +39,7 @@ Instructions to play this game:
 ## Contributing
 >This is a free software, feel free to contribute in any way you want
 
-1. Fork it (<https://github.com/heitorgodau/IronQuest-The-Game/fork>)
+1. Fork it (<https://grazidiandra.github.io/IronHack--Project1-Game/fork>)
 2. Create your feature branch (`git checkout -b feature/fooBar`)
 3. Commit your changes (`git commit -am 'Add some fooBar'`)
 4. Push to the branch (`git push origin feature/fooBar`)
