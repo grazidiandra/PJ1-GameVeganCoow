@@ -1,7 +1,6 @@
-# IronHack-Project1-Game_VEGAN COOW
+# [VEGAN COOW](https://grazidiandra.github.io/PJ1-GameVeganCoow/)
 > "VeganCoow" is a game build in HTML, canvas, CSS and Javascript.
 > This game is in beta version 1.5.0
-
 
 
 ## Installation
